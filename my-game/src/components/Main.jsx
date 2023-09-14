@@ -5,6 +5,8 @@ import { ResetButton } from "./Reset";
 import { ScoreBoard } from "./Score";
 
 
+
+
 const Main = () => {
 
   const WIN_CONDITIONS = [
@@ -70,13 +72,18 @@ const Main = () => {
     setGameOver(false);
     setBoard(Array(9).fill(null));
   }
+ 
+  const restart= () => {
+    setScores({ xScore: 0, oScore: 0 });
+  }
 
   return (
     <div className="App">
         <h1>Tic-tac-toe</h1>
       <ScoreBoard scores={scores} xPlaying={xPlaying} />
       <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
-      <ResetButton resetBoard={resetBoard} />
+      <ResetButton resetBoard={resetBoard} restart={ restart }  />
+    
     </div>
   );
 }

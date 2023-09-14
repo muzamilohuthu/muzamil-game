@@ -1,9 +1,10 @@
 import React from 'react';
 
-// import "./ResetButton.css";
-
-export const ResetButton = ({ resetBoard }) => {
-    return (
-        <button className="reset-btn" onClick={resetBoard}>Reset</button>
-    )
-}
+export const ResetButton = ({ resetBoard, restart }) => {
+  return (
+    <div className='btn-group'>
+      <button className="reset-btn" onClick={resetBoard}>Reset</button>
+      <button className="restart-btn" onClick={restart}>Restart</button>
+    </div>
+  );
+};
